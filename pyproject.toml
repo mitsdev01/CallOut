@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "callout-ai"
+version = "1.0.0"
+description = "AI-powered voice cloning app for sick day callouts"
+authors = ["Your Name"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.0"
+werkzeug = "^3.0.1"
+requests = "^2.31.0"
+numpy = "^1.24.3"
+scipy = "^1.10.1"
+soundfile = "^0.12.1"
+TTS = "^0.22.0"
+pydub = "^0.25.1"
+torch = "^2.1.0"
+torchaudio = "^2.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+

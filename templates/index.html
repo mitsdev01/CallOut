@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callout.ai - AI Voice Cloning for Sick Days</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Callout.ai</h1>
+            <p class="tagline">Your AI-Powered Voice Clone for Sick Day Callouts</p>
+        </header>
+
+        <main>
+            <!-- Step 1: Record Voice Sample -->
+            <section class="card" id="record-section">
+                <h2>Step 1: Record Your Voice Sample</h2>
+                <p class="description">Record a 10-15 second sample of your voice. Speak naturally and clearly.</p>
+                
+                <div class="recording-controls">
+                    <button id="recordBtn" class="btn btn-primary">
+                        <span class="btn-icon">🎙️</span>
+                        Start Recording
+                    </button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">⏹️</span>
+                        Stop Recording
+                    </button>
+                    <button id="playBtn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">▶️</span>
+                        Play Sample
+                    </button>
+                </div>
+
+                <div class="timer" id="timer">00:00</div>
+                
+                <audio id="audioPlayback" controls style="display: none;"></audio>
+                
+                <button id="uploadBtn" class="btn btn-success" disabled>
+                    <span class="btn-icon">⬆️</span>
+                    Upload Voice Sample
+                </button>
+                
+                <div class="status" id="uploadStatus"></div>
+            </section>
+
+            <!-- Step 2: Generate Callout Message -->
+            <section class="card" id="generate-section" style="display: none;">
+                <h2>Step 2: Generate Your Callout Message</h2>
+                <p class="description">Customize your callout message or use the default.</p>
+                
+                <div class="form-group">
+                    <label for="messageInput">Callout Message:</label>
+                    <textarea 
+                        id="messageInput" 
+                        rows="4" 
+                        placeholder="Hi, this is calling to let you know I'm not feeling well today and won't be able to come in to work. I'll keep you updated. Thanks for understanding."
+                    >Hi, this is calling to let you know I'm not feeling well today and won't be able to come in to work. I'll keep you updated. Thanks for understanding.</textarea>
+                </div>
+
+                <button id="generateBtn" class="btn btn-primary">
+                    <span class="btn-icon">🤖</span>
+                    Generate Callout Voice
+                </button>
+                
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Cloning your voice and generating audio... This may take a moment.</p>
+                </div>
+                
+                <div class="status" id="generateStatus"></div>
+            </section>
+
+            <!-- Step 3: Download Result -->
+            <section class="card" id="result-section" style="display: none;">
+                <h2>✅ Your Callout is Ready!</h2>
+                <p class="description">Listen to your AI-generated callout message.</p>
+                
+                <audio id="resultAudio" controls class="result-audio"></audio>
+                
+                <button id="downloadBtn" class="btn btn-success">
+                    <span class="btn-icon">⬇️</span>
+                    Download Audio File
+                </button>
+                
+                <button id="newCalloutBtn" class="btn btn-secondary">
+                    <span class="btn-icon">🔄</span>
+                    Generate Another
+                </button>
+            </section>
+        </main>
+
+        <footer>
+            <p class="disclaimer">⚠️ Disclaimer: This app is for entertainment purposes. Please use responsibly and in accordance with your employer's policies.</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
+
